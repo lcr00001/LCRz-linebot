@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 				//curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				//curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
 				//$result2 = curl_exec($ch2);
-				$text = $aaa;
+				$text = mid($aaa,1,5);
 				//$text = 'test';
 				//curl_close($ch2);
 				}
