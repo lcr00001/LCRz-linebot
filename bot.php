@@ -1,6 +1,12 @@
 <?php
 $access_token = 'Kdp+YAGfXz1cL5KUn8WVHnIsZPGGKbA/AybSpJKE6IZcB6hx18xr7/l5DpQR5/bls8gkzgSs/CqQsNWRtyFmEE3lWC943I3MFQ04ns/jXdzI6WsRjLMSMSkcHuEKdYKG7KYlgfmgI2zq7SIYnzMWJwdB04t89/1O/w1cDnyilFU=';
-
+$ch2 = curl_init('http://thaionepiece.com/board/viewforum.php?f=6');
+				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
+				$aaa = curl_exec($ch2);
+				//$pos = strpos($aaa,"topictitle");
+				$text = textStart($aaa,"topictitle","</a>",12,1);
+				echo $text;
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -70,4 +76,4 @@ function textStart($textr,$textf,$textt,$fl, $st){
 					$pos2 = strpos($textr,$textt,$pos+1);
 					$txt = substr($textr,$pos+$fl,$pos2 - ($pos+$fl));	
 					return $txt;
-				}
+}
