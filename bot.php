@@ -56,13 +56,8 @@ if (!is_null($events['events'])) {
 }
 
 $textR = $_GET['TEST'];
-			if (stripos($textR, "เบอร์") !== false) {
-				if (stripos($textR, "ตอง") !== false) {
-					$text = 'ตอง : 0867746112';
-					echo 'ตอง : 0867746112';
-				}
-				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
-					$text = 'บอลหมี : 0972344867';
-					echo 'บอลหมี : 0972344867';
-				}
-			}
+			$ch = curl_init('http://www.google.co.th');
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$result = curl_exec($ch);
+			echo curl_getinfo($c, CURLINFO_HTTP_CODE);
+			curl_close($ch);
