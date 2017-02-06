@@ -12,11 +12,11 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['text'];
-			if (stripos($event['message']['text'], "เบอร์") !== false) {
-				if (stripos($event['message']['text'], "เตอง") !== false) {
+			$textR = $event['message']['text'];
+			if (stripos($textR, "เบอร์") !== false) {
+				//if (stripos($textR, "เตอง") !== false) {
 					$text = 'ตอง : 0867746112';
-				}
+				//}
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
