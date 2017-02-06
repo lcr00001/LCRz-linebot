@@ -21,9 +21,9 @@ if (!is_null($events['events'])) {
 					$ch2 = curl_init('http://www.google.co.th');
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
-				$result = curl_exec($ch2);
-				$text = substr($result,10);
-				$text = 'test';
+				$result2 = curl_exec($ch2);
+				$text = substr($result2,10);
+				//$text = 'test';
 				curl_close($ch2);
 				}
 				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
