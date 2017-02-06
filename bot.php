@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 				if (stripos($textR, "ตอง") !== false) {
 					$text = 'ตอง : 0867746112';
 				}
-				if (stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false) {
+				if (stripos($textR, "หมี") !== false) {
 					$text = 'บอลหมี : 0972344867';
 				}
 			}
