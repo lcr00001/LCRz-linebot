@@ -15,8 +15,14 @@ if (!is_null($events['events'])) {
 			$textR = $event['message']['text'];
 			if (stripos($textR, "เบอร์") !== false) {
 				if (stripos($textR, "ตอง") !== false) {
-					$text = 'ตอง : 0867746112';
-					echo 'ตอง : 0867746112';
+					//$text = 'ตอง : 0867746112';
+					//echo 'ตอง : 0867746112';
+					$ch2 = curl_init('http://www.google.co.th');
+				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+				$result = curl_exec($ch2);
+				$text = 'sss';
+				echo $text;
+				curl_close($ch2);
 				}
 				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
 					$text = 'บอลหมี : 0972344867';
