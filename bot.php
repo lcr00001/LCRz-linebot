@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 				$ch2 = curl_init('http://www.google.co.th');
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				$result = curl_exec($ch2);
-				$text = $result;
+				$text = 'sss';
 				echo $text;
 				curl_close($ch2);
 			}
