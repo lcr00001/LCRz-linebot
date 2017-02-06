@@ -16,9 +16,11 @@ if (!is_null($events['events'])) {
 			if (stripos($textR, "เบอร์") !== false) {
 				if (stripos($textR, "ตอง") !== false) {
 					$text = 'ตอง : 0867746112';
+					echo 'ตอง : 0867746112';
 				}
 				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
 					$text = 'บอลหมี : 0972344867';
+					echo 'บอลหมี : 0972344867';
 				}
 			}
 			// Get replyToken
