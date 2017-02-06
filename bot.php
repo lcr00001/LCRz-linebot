@@ -17,9 +17,6 @@ if (!is_null($events['events'])) {
 				if (stripos($event['message']['text'], "เตอง") !== false) {
 					$text = 'ตอง : 0867746112';
 				}
-				if (stripos($event['message']['text'], "หมี") !== false) || (stripos($event['message']['text'], "บอล") !== false) {
-					$text = 'บอล : 0972344867';
-				}
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
