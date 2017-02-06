@@ -13,9 +13,9 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
-			//if ($event['message']['text'] == 'เบอร์') {
-			//	$text = '0867746112'
-			//}
+			if ($event['message']['text'] == 'เบอร์') {
+			$text = '0867746112'
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
