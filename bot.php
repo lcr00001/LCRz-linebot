@@ -14,9 +14,9 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$textR = $event['message']['text'];
 			if (stripos($textR, "เบอร์") !== false) {
-				//if (stripos($textR, "เตอง") !== false) {
+				if (stripos($textR, "ตอง") !== false) {
 					$text = 'ตอง : 0867746112';
-				//}
+				}
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
