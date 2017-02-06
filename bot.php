@@ -27,11 +27,10 @@ if (!is_null($events['events'])) {
 				$ch2 = curl_init('http://www.google.co.th');
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				$result = curl_exec($ch2);
-				$ttt = curl_getinfo($ch2, CURLINFO_HTTP_CODE);
 				$text = $result;
-				echo $result;
+				echo $text;
 				curl_close($ch2);
-				}
+			}
 			
 
 			// Get replyToken
