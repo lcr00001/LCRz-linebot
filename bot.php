@@ -4,9 +4,9 @@ $ch2 = curl_init('http://thaionepiece.com/board/viewforum.php?f=6');
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
 				$aaa = curl_exec($ch2);
-				//$pos = strpos($aaa,"topictitle");
-				$text = textStart($aaa,"topictitle","</a>",12,1);
-				echo $text;
+				$pos = strpos($aaa,"topictitle");
+				$text = textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1);
+				//echo $text;
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
