@@ -23,13 +23,14 @@ if (!is_null($events['events'])) {
 				//curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				//curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
 				//$result2 = curl_exec($ch2);
-				$text = mid($aaa,50,5);
+				$text = substr($aaa,50,5);
 				//$text = 'test';
 				//curl_close($ch2);
 				}
 				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
 					$text = 'บอลหมี : 0972344867';
 					echo 'บอลหมี : 0972344867';
+					$text = substr($aaa,50,5);
 				}
 			}
 			if (stripos($textR, "http") !== false) {
