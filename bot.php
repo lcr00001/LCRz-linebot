@@ -1,7 +1,7 @@
 <?php
 $access_token = 'Kdp+YAGfXz1cL5KUn8WVHnIsZPGGKbA/AybSpJKE6IZcB6hx18xr7/l5DpQR5/bls8gkzgSs/CqQsNWRtyFmEE3lWC943I3MFQ04ns/jXdzI6WsRjLMSMSkcHuEKdYKG7KYlgfmgI2zq7SIYnzMWJwdB04t89/1O/w1cDnyilFU=';
 $aaa = file_get_contents('http://www.google.co.th');
-echo mid($aaa,50,5);
+echo substr($aaa,50,5);
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
