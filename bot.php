@@ -18,13 +18,13 @@ if (!is_null($events['events'])) {
 
 					//$text = 'ตอง : 0867746112';
 					//echo 'ตอง : 0867746112';
-					$ch2 = curl_init('http://www.google.co.th');
-				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
-				$result2 = curl_exec($ch2);
-				$text = substr($result2,10);
+					//$ch2 = curl_init('http://www.google.co.th');
+				//curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+				//curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
+				//$result2 = curl_exec($ch2);
+				$text = file_get_contents('http://www.google.co.th');
 				//$text = 'test';
-				curl_close($ch2);
+				//curl_close($ch2);
 				}
 				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
 					$text = 'บอลหมี : 0972344867';
