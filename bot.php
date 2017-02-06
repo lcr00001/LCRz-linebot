@@ -54,7 +54,8 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-$textR = $TEST;
+
+$textR = $_GET['TEST'];
 			if (stripos($textR, "เบอร์") !== false) {
 				if (stripos($textR, "ตอง") !== false) {
 					$text = 'ตอง : 0867746112';
