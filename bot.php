@@ -23,12 +23,13 @@ if (!is_null($events['events'])) {
 					echo 'บอลหมี : 0972344867';
 				}
 			}
-			if (stripos($textR, "http") !== false) {
-				$ch2 = curl_init('http://www.google.co.th');
+			if (stripos($textR, "Spoil") !== false) {
+				$ch2 = curl_init('http://thaionepiece.com/board/viewforum.php?f=6');
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
 				$aaa = curl_exec($ch2);
-				$text = substr($aaa,50,5);
+				//$pos = strpos($aaa,"topictitle");
+				$text = textStart($aaa,"topictitle","</a>",12,1);	
 			}
 			
 
@@ -64,4 +65,9 @@ if (!is_null($events['events'])) {
 	}
 }
 
-$textR = $_GET['TEST'];
+function textStart($textr,$textf,$textt,$fl, $st){
+					$pos = strpos($textr,$textf,$st);
+					$pos2 = strpos($textr,$textt,$pos+1);
+					$txt = substr($textr,$pos+$fl,$pos2 - ($pos+$fl));	
+					return $txt;
+				}
