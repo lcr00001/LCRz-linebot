@@ -1,10 +1,6 @@
 <?php
 $access_token = 'Kdp+YAGfXz1cL5KUn8WVHnIsZPGGKbA/AybSpJKE6IZcB6hx18xr7/l5DpQR5/bls8gkzgSs/CqQsNWRtyFmEE3lWC943I3MFQ04ns/jXdzI6WsRjLMSMSkcHuEKdYKG7KYlgfmgI2zq7SIYnzMWJwdB04t89/1O/w1cDnyilFU=';
-$ch2 = curl_init('http://www.google.co.th');
-curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
-$aaa = curl_exec($ch2);
-echo substr($aaa,50,5);
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -19,16 +15,8 @@ if (!is_null($events['events'])) {
 			$textR = $event['message']['text'];
 			if (stripos($textR, "เบอร์") !== false) {
 				if (stripos($textR, "ตอง") !== false) {
-
-					//$text = 'ตอง : 0867746112';
-					//echo 'ตอง : 0867746112';
-					//$ch2 = curl_init('http://www.google.co.th');
-				//curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
-				//curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
-				//$result2 = curl_exec($ch2);
-				$text = substr($aaa,50,5);
-				//$text = 'test';
-				//curl_close($ch2);
+					$text = 'ตอง : 0867746112';
+					echo 'ตอง : 0867746112';
 				}
 				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
 					$text = 'บอลหมี : 0972344867';
@@ -38,10 +26,9 @@ if (!is_null($events['events'])) {
 			if (stripos($textR, "http") !== false) {
 				$ch2 = curl_init('http://www.google.co.th');
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
-				$result = curl_exec($ch2);
-				$text = 'sss';
-				echo $text;
-				curl_close($ch2);
+				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
+				$aaa = curl_exec($ch2);
+				$text = substr($aaa,50,5);
 			}
 			
 
