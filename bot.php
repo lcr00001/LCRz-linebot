@@ -23,6 +23,7 @@ if (!is_null($events['events'])) {
 				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
 				$result = curl_exec($ch2);
 				$text = substr($result,10);
+				$text = 'test';
 				curl_close($ch2);
 				}
 				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
