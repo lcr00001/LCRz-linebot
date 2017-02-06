@@ -13,8 +13,13 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
-			if ($event['message']['text'] == 'เบอร์') {
-			$text = '0867746112';
+			if (stripos($event['message']['text'], "เบอร์") !== false) {
+				if (stripos($event['message']['text'], "เตอง") !== false) {
+					$text = 'ตอง : 0867746112';
+				}
+				if (stripos($event['message']['text'], "หมี") !== false) || (stripos($event['message']['text'], "บอล") !== false) {
+					$text = 'บอล : 0972344867';
+				}
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
