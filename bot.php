@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
 				$aaa = curl_exec($ch2);
 				//$pos = strpos($aaa,"topictitle");
-				$text = textStart($aaa,"topictitle","</a>",12,1);	
+				$text = textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1).textStart($aaa,"topictitle","</a>",12,1);	
 			}
 			
 
