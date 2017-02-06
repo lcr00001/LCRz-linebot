@@ -60,5 +60,5 @@ $textR = $_GET['TEST'];
 			curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 			$result = curl_exec($ch2);
 			$ttt = curl_getinfo($ch2, CURLINFO_HTTP_CODE);
-			echo $ttt;
+			echo $result;
 			curl_close($ch2);
