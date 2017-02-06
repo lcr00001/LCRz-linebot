@@ -56,8 +56,9 @@ if (!is_null($events['events'])) {
 }
 
 $textR = $_GET['TEST'];
-			$ch = curl_init('http://www.google.co.th');
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			$result = curl_exec($ch);
-			echo curl_getinfo($c, CURLINFO_HTTP_CODE);
-			curl_close($ch);
+			$ch2 = curl_init('http://www.google.co.th');
+			curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+			$result = curl_exec($ch2);
+			$ttt = curl_getinfo($ch2, CURLINFO_HTTP_CODE);
+			echo $ttt;
+			curl_close($ch2);
