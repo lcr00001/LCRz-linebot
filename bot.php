@@ -30,9 +30,9 @@ if (!is_null($events['events'])) {
 				$save = 1;
 
 				for ($x = 1; $x <= 10; $x++){
-					$text = textStart($aaa,"topictitle","</a>",12,$save);
+					$textz = textStart($aaa,"topictitle","</a>",12,$save);
 					$save = $GLOBALS["SvPost"];
-					$text = $text. "<BR>";
+					$text = $text.$textz ."<BR>";
 				}
 			}
 			
