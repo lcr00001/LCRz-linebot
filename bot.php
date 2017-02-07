@@ -14,12 +14,46 @@ if (!is_null($events['events'])) {
 			$textR = strtoupper($event['message']['text']);
 			if (stripos($textR, "เบอร์") !== false) {
 				if (stripos($textR, "ตอง") !== false) {
-					$text = 'ตอง : 0867746112';
-					echo 'ตอง : 0867746112';
+					$text = $text . 'ตอง : 0867746112' . "\n";
 				}
 				if ((stripos($textR, "หมี") !== false) || (stripos($textR, "บอล") !== false)) {
-					$text = 'บอลหมี : 0972344867';
-					echo 'บอลหมี : 0972344867';
+					$text = $text . 'บอลหมี : 0972344867' . "\n";
+				}
+				if (stripos($textR, "เอก") !== false) {
+					$text = $text . 'พี่เอก : 0855561410' . "\n";
+				}
+				if (stripos($textR, "อิ่ม") !== false) {
+					$text = $text . 'พี่อิ่ม : 0897439709' . "\n";
+				}
+				if (stripos($textR, "นัท") !== false) {
+					$text = $text . 'พี่นัท : 0863741644' . "\n";
+				}
+				if (stripos($textR, "เก่ง") !== false) {
+					$text = $text . 'พี่เก่ง : 0867818754' . "\n";
+				}
+				if (stripos($textR, "แม็ก") !== false) {
+					$text = $text . 'พี่แม็ก : 0868179481' . "\n";
+				}
+				if (stripos($textR, "น็อต") !== false) {
+					$text = $text . 'พี่น็อต : 0812874722' . "\n";
+				}
+				if (stripos($textR, "ตาล") !== false) {
+					$text = $text . 'พี่ตาลเล็ก : 0864119958' . "\n";
+				}
+				if (stripos($textR, "นัท") !== false) {
+					$text = $text . 'นัทสูง : 0634016665' . "\n";
+				}
+				if (stripos($textR, "ตั้ม") !== false) {
+					$text = $text . 'พี่ตั้ม : 0869942364' . "\n";
+				}
+				if (stripos($textR, "ตี") !== false) {
+					$text = $text . 'พี่ตี : 0896972514' . "\n";
+				}
+				if (stripos($textR, "ตาล") !== false) {
+					$text = $text . 'พี่ตาลใหญ่ : 0896674667' . "\n";
+				}
+				if (stripos($textR, "พี่วง") !== false) {
+					$text = $text . 'พี่วงศ์ : 0815842454' . "\n";
 				}
 			}
 			if (stripos($textR, "SPOIL") !== false) {
