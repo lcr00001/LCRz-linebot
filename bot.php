@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 				for ($x = 1; $x <= 10; $x++){
 					$textz = textStart($aaa,"topictitle","</a>",12,$save);
 					$save = $GLOBALS["SvPost"];
-					$text = $text.$textz ."<BR>";
+					$text = $text.$textz ."\n";
 				}
 			}
 			
