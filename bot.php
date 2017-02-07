@@ -66,6 +66,13 @@ if (!is_null($events['events'])) {
 				//echo $text;
 			}
 
+			if (stripos($textR, "HELP") !== false) {
+				$text = "เบอร์ <ชื่อ>" . "\n";
+				$text = $text ."RPG: <Code> (ex. RPG:CPF7030)" . "\n";
+				$text = $text ."CLP: <Code> (ex. CLP:CPF7030)" . "\n";
+				//echo $text;
+			}
+
 			
 
 			// Get replyToken
