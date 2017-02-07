@@ -11,7 +11,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$textR = $event['message']['text'];
+			$textR = strtoupper($event['message']['text']);
 			if (stripos($textR, "เบอร์") !== false) {
 				if (stripos($textR, "ตอง") !== false) {
 					$text = 'ตอง : 0867746112';
@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 					echo 'บอลหมี : 0972344867';
 				}
 			}
-			if (stripos($textR, "Spoil") !== false) {
+			if (stripos($textR, "SPOIL") !== false) {
 				$ch2 = curl_init('http://thaionepiece.com/board/viewforum.php?f=6');
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
@@ -36,7 +36,21 @@ if (!is_null($events['events'])) {
 				}
 			}
 
-			if (stripos($textR, "400:") !== false) {
+			if (stripos($textR, "RPG:") !== false) {
+				$ctyp = substr($textR, 4,3);
+				$ccde = substr($textR, 7);
+				$ch2 = curl_init('http://www.iseriesworld.net/?messages=rpg&prefix='.$ctyp.'&code='.$ccde);
+				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
+				$aaa = curl_exec($ch2);
+
+				$text = "MSG ID : " . textStart($aaa,"Message ID","</h1>",106,1) . "\n";
+				$text = $text . "MSG Des : " . textStart($aaa,"Message","</tr>",110,$GLOBALS["SvPost"]). "\n";
+				$text = $text . "Cause : " . textStart($aaa,"Cause<","</td>",108,$GLOBALS["SvPost"]). "\n";
+				//echo $text;
+			}
+
+			if (stripos($textR, "CLP:") !== false) {
 				$ctyp = substr($textR, 4,3);
 				$ccde = substr($textR, 7);
 				$ch2 = curl_init('http://www.iseriesworld.net/?messages=cl&prefix='.$ctyp.'&code='.$ccde);
@@ -49,6 +63,7 @@ if (!is_null($events['events'])) {
 				$text = $text . "Cause : " . textStart($aaa,"Cause<","</td>",108,$GLOBALS["SvPost"]). "\n";
 				//echo $text;
 			}
+
 			
 
 			// Get replyToken
