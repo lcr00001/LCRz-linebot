@@ -35,6 +35,20 @@ if (!is_null($events['events'])) {
 					$text = $text.$textz ."\n";
 				}
 			}
+
+			if (stripos($textR, "400:") !== false) {
+				$ctyp = substr($textR, 4,3);
+				$ccde = substr($textR, 7);
+				$ch2 = curl_init('http://www.iseriesworld.net/?messages=cl&prefix='.$ctyp.'&code='.$ccde);
+				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch2, CURLOPT_BINARYTRANSFER, true);
+				$aaa = curl_exec($ch2);
+
+				$text = "MSG ID : " . textStart($aaa,"Message ID","</h1>",106,1) . "\n";
+				$text = $text . "MSG Des : " . textStart($aaa,"Message","</tr>",110,$GLOBALS["SvPost"]). "\n";
+				$text = $text . "Cause : " . textStart($aaa,"Cause<","</td>",108,$GLOBALS["SvPost"]). "\n";
+				//echo $text;
+			}
 			
 
 			// Get replyToken
@@ -71,7 +85,7 @@ if (!is_null($events['events'])) {
 
 function textStart($textr,$textf,$textt,$fl, $st){
 					$pos = strpos($textr,$textf,$st);
-					$pos2 = strpos($textr,$textt,$pos+1);
+					$pos2 = strpos($textr,$textt,$pos+$fl);
 					$GLOBALS["SvPost"] = $pos2;
 					$txt = substr($textr,$pos+$fl,$pos2 - ($pos+$fl));
 					return $txt;
