@@ -29,10 +29,10 @@ if (!is_null($events['events'])) {
 				$aaa = curl_exec($ch2);
 				$save = 1;
 
-				for ($x = 1; $x <= 20; $x++){
+				for ($x = 1; $x <= 10; $x++){
 					$text = textStart($aaa,"topictitle","</a>",12,$save);
 					$save = $GLOBALS["SvPost"];
-					echo $text. "<BR>";
+					$text = $text. "<BR>";
 				}
 			}
 			
