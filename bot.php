@@ -79,7 +79,7 @@ if (!is_null($events['events'])) {
 				$aaa = curl_exec($ch2);
 
 				$text = "MSG ID : " . textStart($aaa,"Message ID","</h1>",106,1) . "\n";
-				$text = $text . "MSG Des : " . textStart($aaa,"Message","</tr>",110,$GLOBALS["SvPost"]). "\n";
+				$text = $text . "MSG Des : " . textStart($aaa,"Message","</td>",110,$GLOBALS["SvPost"]). "\n";
 				$text = $text . "Cause : " . textStart($aaa,"Cause<","</td>",108,$GLOBALS["SvPost"]). "\n";
 				$text = $text . "Recovery : " . textStart($aaa,"Recovery","</td>",111,$GLOBALS["SvPost"]). "\n";
 				//echo $text;
